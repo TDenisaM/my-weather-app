@@ -16,7 +16,6 @@ function formatDate(timestamp) {
 }
 
 function displayWeatherConditions(response) {
-  console.log(response);
   document.querySelector("#current-date").innerHTML = formatDate(
     response.data.dt * 1000
   );
@@ -44,7 +43,7 @@ function displayWeatherConditions(response) {
   let todaysIcon = document.querySelector("#todays-icon");
   todaysIcon.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.pn`
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   todaysIcon.setAttribute("alt", response.data.weather[0].description);
 }
