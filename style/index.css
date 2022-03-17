@@ -19,8 +19,6 @@
 }
 .heather {
   display: inline;
-  box-sizing: border-box;
-  width: 100%;
 }
 .app {
   position: absolute;
@@ -94,13 +92,19 @@
   padding-top: 40px;
   margin: 0 auto;
 }
-
 .weather-today-text {
   text-align: left;
   font-size: 35px;
   padding-left: 25px;
 }
 
+.weather-today-text small {
+  font-size: 20px;
+  color: rgb(82, 83, 87);
+}
+.date {
+  line-height: 30px;
+}
 .left .city-weather {
   display: block;
   margin: 0 auto;
@@ -154,16 +158,15 @@
   border-color: #9db9c4;
 }
 .weather-today-image {
-  display: block;
   margin: 120px auto;
   text-align: center;
 }
 
 .weather-today-image p {
-  display: block;
   margin: 0 auto;
   text-align: center;
   font-size: 20px;
+  text-transform: capitalize;
 }
 .wind-emoji,
 .humidity-emoji,

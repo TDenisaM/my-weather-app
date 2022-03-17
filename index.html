@@ -16,8 +16,9 @@
       href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style/index.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style/index.css" />
+
     <title>WeatherApp</title>
   </head>
   <body>
@@ -26,14 +27,12 @@
         <div class="heather">
           <h1 class="app">
             Your weather
-            <div>
-              <img
-                class="logo"
-                src="images/weather app.svg"
-                alt=""
-                width="150px 100px"
-              />
-            </div>
+            <img
+              class="logo"
+              src="images/weather app.svg"
+              alt=""
+              width="150px 100px"
+            />
           </h1>
           <form class="search" id="search-form">
             <input
@@ -52,14 +51,13 @@
             </button>
           </form>
         </div>
-
         <div class="row everything">
           <div class="col-7 today-left">
             <div class="card mb-3 today" style="max-width: 550px">
               <div class="row g-0 left">
                 <div class="col-md-9 weather-today-text">
-                  <div class="day" id="current-day">Monday</div>
-                  <div class="time" id="current-time">12:00PM</div>
+                  <small>Last updated:</small>
+                  <div class="date" id="current-date">Monday 12:00</div>
                   <div class="city-weather">
                     <p class="city" id="current-city"></p>
                     <p class="country" id="current-country"></p>

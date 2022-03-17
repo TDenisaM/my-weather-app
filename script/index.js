@@ -1,23 +1,26 @@
-let todayDayAndTime = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let currentDay = days[todayDayAndTime.getDay()];
-let currentHours = String(todayDayAndTime.getHours()).padStart(2, "0");
-let currentMinutes = String(todayDayAndTime.getMinutes()).padStart(2, "0");
-let todayDay = document.querySelector("#current-day");
-let todayTime = document.querySelector("#current-time");
-todayDay.innerHTML = `${currentDay}`;
-todayTime.innerHTML = `${currentHours}:${currentMinutes}`;
+function formatDate(timestamp) {
+  let todayDayAndTime = new Date(timestamp);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[todayDayAndTime.getDay()];
+  let hours = String(todayDayAndTime.getHours()).padStart(2, "0");
+  let minutes = String(todayDayAndTime.getMinutes()).padStart(2, "0");
+  return `${day}, ${hours}:${minutes}`;
+}
 
 function displayWeatherConditions(response) {
-  //console.log(response);
+  console.log(response);
+  document.querySelector("#current-date").innerHTML = formatDate(
+    response.data.dt * 1000
+  );
+
   document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.main.temp
   );
