@@ -31,14 +31,14 @@
               class="logo"
               src="images/weather app.svg"
               alt=""
-              width="150px 100px"
+              width="175px 125px"
             />
           </h1>
           <form class="search" id="search-form">
             <input
               class="search-box"
               id="input-city"
-              type="text"
+              type="search"
               placeholder="Type city"
             />
             <input class="search-button" type="submit" value="Search" />
@@ -63,15 +63,16 @@
                     <p class="country" id="current-country"></p>
                     <p class="current-temp" id="current-temperature"></p>
                     <p class="units">
-                      <a id="link-celsius" href="#">°C</a><span> |</span>
+                      <a id="link-celsius" href="#" class="active">°C</a
+                      ><span> |</span>
                       <a id="link-fahrenheit" href="#">°F</a>
                     </p>
                   </div>
                 </div>
-                <div class="col-md-4 weather-today-image">
+                <div class="col-md-4 weather-today-icon">
                   <img
                     src=""
-                    class="img-fluid rounded-start todays-emoji"
+                    class="img-fluid rounded-start todays-icon"
                     alt="clouds-and-rain"
                     width="170px"
                     id="todays-icon"
@@ -126,7 +127,7 @@
           </div>
         </div>
         <hr />
-        <div class="row align-items-center the-day" style="max-width: 1000px">
+        <div class="row align-items-center the-day" style="max-width: 900px">
           <div class="col-2 now">
             <p>
               Now <br />
@@ -172,7 +173,7 @@
           </div>
         </div>
 
-        <div class="row align-items-end the-week" style="max-width: 1000px">
+        <div class="row align-items-end the-week" style="max-width: 900px">
           <div class="col-2 tue">
             <p>
               Tue <br />

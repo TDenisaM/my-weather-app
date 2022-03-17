@@ -23,7 +23,7 @@
 .app {
   position: absolute;
   margin: 0;
-  padding: 30px;
+  padding: 40px;
   color: #1c7696;
   text-shadow: 5px 5px 2px rgb(129, 172, 179);
   font-size: 30px;
@@ -87,7 +87,7 @@
 .today-right,
 .right {
   margin: auto;
-  height: 175px;
+  height: 200px;
   min-height: fit-content;
 }
 .today {
@@ -148,26 +148,31 @@
   font-size: 30px;
   padding: 5px;
   color: rgb(19, 107, 120);
+  background-color: #f2ce04;
+  border: solid;
+  border-color: rgb(19, 107, 120);
+  border-radius: 8px;
+}
+.weather-today-text .active {
+  font-size: 30px;
+  padding: 5px;
+  color: rgb(19, 107, 120);
   background-color: #9db9c4;
   border: solid;
   border-color: rgb(19, 107, 120);
   border-radius: 8px;
-  cursor: pointer;
+  cursor: default;
 }
-.units a:active {
-  font-size: 30px;
-  padding: 10px;
-  color: #9db9c4;
-  background-color: rgb(19, 107, 120);
-  border: solid;
-  border-color: #9db9c4;
+.active:hover {
+  text-decoration: none;
+  background-color: #9db9c4;
 }
-.weather-today-image {
+.weather-today-icon {
   margin-top: 60px;
 }
-.weather-today-image p {
+.weather-today-icon p {
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
   text-transform: capitalize;
 }
 .wind-emoji,
@@ -234,6 +239,7 @@
   font-size: 30px;
 }
 footer {
+  margin: 10px auto;
   padding: 5px;
   font-size: 20px;
   font-weight: 900;
@@ -244,6 +250,4 @@ footer {
 footer a {
   text-decoration: none;
   transition: all 150ms ease-in-out;
-  font-size: 20px;
-  font-weight: 900;
 }

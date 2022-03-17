@@ -46,6 +46,7 @@ function displayWeatherConditions(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   todaysIcon.setAttribute("alt", response.data.weather[0].description);
+  celsiusTemperature = response.data.main.temp;
 }
 function searchCity(city) {
   let units = "metric";
@@ -77,10 +78,34 @@ function getCurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(currentPosition);
 }
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault;
+  let temperatureElement = document.querySelector("#current-temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault;
+  let temperatureElement = document.querySelector("#current-temperature");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusTemperature = null;
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 let currentPositionButton = document.querySelector("#current-location-button");
 currentPositionButton.addEventListener("click", getCurrentPosition);
+
+let fahrenheitLink = document.querySelector("#link-fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#link-celsius");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Oslo");
