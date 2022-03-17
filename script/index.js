@@ -41,6 +41,12 @@ function displayWeatherConditions(response) {
   document.querySelector("#current-country").innerHTML =
     response.data.sys.country;
   document.querySelector("#current-city").innerHTML = response.data.name;
+  let todaysIcon = document.querySelector("#todays-icon");
+  todaysIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.pn`
+  );
+  todaysIcon.setAttribute("alt", response.data.weather[0].description);
 }
 function searchCity(city) {
   let units = "metric";
