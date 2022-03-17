@@ -1,13 +1,15 @@
+body {
+  background-image: url("imagescss/background-cloudy_and_rain.jpg");
+  background-size: cover;
+}
+
 .container {
   font-family: PT mono, monospace;
-  background-color: hsla(154, 37%, 76%, 0.5);
-  background-image: url("imagescss/background-cloudy_and_rain.jpg");
+  background-color: hsla(154, 37%, 76%, 0.3);
   background-blend-mode: lighten, exclusion;
-  background-size: cover;
   background-repeat: no-repeat;
   margin: 30px auto;
   border-radius: 20px;
-  max-width: 500px;
   min-width: fit-content;
   min-height: fit-content;
 }
@@ -178,13 +180,13 @@ h1 {
 }
 
 .the-day {
+  margin: 0 auto;
   text-align: center;
   padding: 10px 5px;
-  margin: 10px 0px;
   border: solid;
   border-radius: 30px;
   border-color: #1c7696;
-  background-color: rgba(150, 186, 172, 0.09);
+  background-color: rgba(95, 113, 114, 0.409);
 }
 .now p,
 .one-hour p,
@@ -201,11 +203,11 @@ h1 {
 .the-week {
   text-align: center;
   padding: 10px 5px;
-  margin: 20px 0px;
+  margin: 25px auto;
   border: solid;
   border-radius: 30px;
   border-color: #1c7696;
-  background-color: rgba(150, 186, 172, 0.09);
+  background-color: rgba(95, 113, 114, 0.409);
 }
 
 .tue p,
