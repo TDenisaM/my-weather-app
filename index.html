@@ -21,209 +21,211 @@
     <title>WeatherApp</title>
   </head>
   <body>
-    <div class="container">
-      <div class="heather">
-        <h1 class="app">
-          Your weather
-          <div>
-            <img
-              class="logo"
-              src="images/weather app.svg"
-              alt=""
-              width="150px 100px"
+    <div class="wrapper">
+      <div class="container">
+        <div class="heather">
+          <h1 class="app">
+            Your weather
+            <div>
+              <img
+                class="logo"
+                src="images/weather app.svg"
+                alt=""
+                width="150px 100px"
+              />
+            </div>
+          </h1>
+          <form class="search" id="search-form">
+            <input
+              class="search-box"
+              id="input-city"
+              type="text"
+              placeholder="Type city"
             />
-          </div>
-        </h1>
-        <form class="search" id="search-form">
-          <input
-            class="search-box"
-            id="input-city"
-            type="text"
-            placeholder="Type city"
-          />
-          <input class="search-button" type="submit" value="Search" />
-          <button
-            type="button"
-            class="btn btn-primary current-location-button"
-            id="current-location-button"
-          >
-            Current Location
-          </button>
-        </form>
-      </div>
+            <input class="search-button" type="submit" value="Search" />
+            <button
+              type="button"
+              class="btn btn-primary current-location-button"
+              id="current-location-button"
+            >
+              Current Location
+            </button>
+          </form>
+        </div>
 
-      <div class="row everything">
-        <div class="col-7 today-left">
-          <div class="card mb-3 today" style="max-width: 550px">
-            <div class="row g-0 left">
-              <div class="col-md-9 weather-today-text">
-                <div class="day" id="current-day">Monday</div>
-                <div class="time" id="current-time">12:00PM</div>
-                <div class="city-weather">
-                  <p class="city" id="current-city"></p>
-                  <p class="country" id="current-country"></p>
-                  <p class="current-temp" id="current-temperature"></p>
-                  <p class="units">
-                    <a id="link-celsius" href="#">°C</a><span> |</span>
-                    <a id="link-fahrenheit" href="#">°F</a>
-                  </p>
+        <div class="row everything">
+          <div class="col-7 today-left">
+            <div class="card mb-3 today" style="max-width: 550px">
+              <div class="row g-0 left">
+                <div class="col-md-9 weather-today-text">
+                  <div class="day" id="current-day">Monday</div>
+                  <div class="time" id="current-time">12:00PM</div>
+                  <div class="city-weather">
+                    <p class="city" id="current-city"></p>
+                    <p class="country" id="current-country"></p>
+                    <p class="current-temp" id="current-temperature"></p>
+                    <p class="units">
+                      <a id="link-celsius" href="#">°C</a><span> |</span>
+                      <a id="link-fahrenheit" href="#">°F</a>
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-3 weather-today-image">
-                <img
-                  src="images/rain.png"
-                  class="img-fluid rounded-start todays-emoji"
-                  alt="clouds-and-rain"
-                  width="200px"
-                  id="todays-emoji"
-                />
-                <p id="description"></p>
+                <div class="col-md-3 weather-today-image">
+                  <img
+                    src="images/rain.png"
+                    class="img-fluid rounded-start todays-emoji"
+                    alt="clouds-and-rain"
+                    width="200px"
+                    id="todays-emoji"
+                  />
+                  <p id="description"></p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-5 today-right">
-          <div class="card mb-3 today" style="max-width: 550px">
-            <div class="row g-0 right">
-              <div class="col-md-4">
-                <div class="col-md-4 wind-emoji">
-                  <img
-                    src="images/wind-icon.png"
-                    class="img-fluid rounded-start wind-img"
-                    alt="wind-emoji"
-                  />
+          <div class="col-5 today-right">
+            <div class="card mb-3 today" style="max-width: 550px">
+              <div class="row g-0 right">
+                <div class="col-md-4">
+                  <div class="col-md-4 wind-emoji">
+                    <img
+                      src="images/wind-icon.png"
+                      class="img-fluid rounded-start wind-img"
+                      alt="wind-emoji"
+                    />
+                  </div>
+                  <div class="col-md-4 humidity-emoji">
+                    <img
+                      src="images/humidity-icon.png"
+                      class="img-fluid rounded-start humidity-img"
+                      alt="wind-emoji"
+                    />
+                  </div>
+                  <div class="col-md-4 sunrise-emoji">
+                    <img
+                      src="images/sunrise-icon.png"
+                      class="img-fluid rounded-start sunrise-img"
+                      alt="wind-emoji"
+                    />
+                  </div>
                 </div>
-                <div class="col-md-4 humidity-emoji">
-                  <img
-                    src="images/humidity-icon.png"
-                    class="img-fluid rounded-start humidity-img"
-                    alt="wind-emoji"
-                  />
-                </div>
-                <div class="col-md-4 sunrise-emoji">
-                  <img
-                    src="images/sunrise-icon.png"
-                    class="img-fluid rounded-start sunrise-img"
-                    alt="wind-emoji"
-                  />
-                </div>
-              </div>
-              <div class="col-md-8">
-                <div class="col-md-8 wind">
-                  Wind
-                  <div class="wind-value" id="wind-value">km/h</div>
-                </div>
-                <div class="col-md-8 humidity">
-                  Humidity
-                  <div class="humidity-value" id="humidity-value">%</div>
-                </div>
-                <div class="col-md-8 sunrise">
-                  Sunrise
-                  <div class="sunrise-value" id="sunrise-value"></div>
+                <div class="col-md-8">
+                  <div class="col-md-8 wind">
+                    Wind
+                    <div class="wind-value" id="wind-value">km/h</div>
+                  </div>
+                  <div class="col-md-8 humidity">
+                    Humidity
+                    <div class="humidity-value" id="humidity-value">%</div>
+                  </div>
+                  <div class="col-md-8 sunrise">
+                    Sunrise
+                    <div class="sunrise-value" id="sunrise-value"></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <hr />
-      <div class="row align-items-center the-day" style="max-width: 1000px">
-        <div class="col-2 now">
-          <p>
-            Now <br />
-            5°C <br />
-          </p>
-          <img src="images/rain.png" alt="raining emoji" width="60px" />
-        </div>
-        <div class="col-2 one-hour">
-          <p>
-            1:00PM <br />
-            5°C <br />
-          </p>
-          <img src="images/rain.png" alt="raining emoji" width="60px" />
+        <hr />
+        <div class="row align-items-center the-day" style="max-width: 1000px">
+          <div class="col-2 now">
+            <p>
+              Now <br />
+              5°C <br />
+            </p>
+            <img src="images/rain.png" alt="raining emoji" width="60px" />
+          </div>
+          <div class="col-2 one-hour">
+            <p>
+              1:00PM <br />
+              5°C <br />
+            </p>
+            <img src="images/rain.png" alt="raining emoji" width="60px" />
+          </div>
+
+          <div class="col-2 two-hour">
+            <p>
+              2:00PM <br />
+              5°C <br />
+            </p>
+            <img src="images/storm.png" alt="storm emoji" width="60px" />
+          </div>
+          <div class="col-2 three-hour">
+            <p>
+              3:00PM<br />
+              8°C <br />
+            </p>
+            <img src="images/rain.png" alt="raining emoji" width="60px" />
+          </div>
+          <div class="col-2 four-hour">
+            <p>
+              4:00PM <br />
+              5°C <br />
+            </p>
+            <img src="images/rain.png" alt="raining emoji" width="60px" />
+          </div>
+          <div class="col-2 five-hour">
+            <p>
+              5:00PM <br />
+              4°C <br />
+            </p>
+            <img src="images/cloudy.png" alt="cloudy emoji" width="60px" />
+          </div>
         </div>
 
-        <div class="col-2 two-hour">
-          <p>
-            2:00PM <br />
-            5°C <br />
-          </p>
-          <img src="images/storm.png" alt="storm emoji" width="60px" />
+        <div class="row align-items-end the-week" style="max-width: 1000px">
+          <div class="col-2 tue">
+            <p>
+              Tue <br />
+              -1°/7°<br />
+            </p>
+            <img src="images/snow.png" alt="snowing emoji" width="60px" />
+          </div>
+          <div class="col-2 wed">
+            <p>
+              Wed <br />
+              -1°/6°<br />
+            </p>
+            <img src="images/snow.png" alt="snowing emoji" width="60px" />
+          </div>
+          <div class="col-2 thu">
+            <p>
+              Thu <br />
+              -1°/6° <br />
+            </p>
+            <img src="images/cloudy.png" alt="cloudy emoji" width="60px" />
+          </div>
+          <div class="col-2 fri">
+            <p>
+              Fri <br />
+              -1°/6°<br />
+            </p>
+            <img src="images/rain.png" alt="raining emoji" width="60px" />
+          </div>
+          <div class="col-2 sat">
+            <p>
+              Sat <br />
+              -1°/7° <br />
+            </p>
+            <img src="images/cloudy.png" alt="cloudy emoji" width="60px" />
+          </div>
+          <div class="col-2 sun">
+            <p>
+              Sun <br />
+              1°/6° <br />
+            </p>
+            <img src="images/cloudy.png" alt="cloudy emoji" width="60px" />
+          </div>
         </div>
-        <div class="col-2 three-hour">
-          <p>
-            3:00PM<br />
-            8°C <br />
-          </p>
-          <img src="images/rain.png" alt="raining emoji" width="60px" />
-        </div>
-        <div class="col-2 four-hour">
-          <p>
-            4:00PM <br />
-            5°C <br />
-          </p>
-          <img src="images/rain.png" alt="raining emoji" width="60px" />
-        </div>
-        <div class="col-2 five-hour">
-          <p>
-            5:00PM <br />
-            4°C <br />
-          </p>
-          <img src="images/cloudy.png" alt="cloudy emoji" width="60px" />
-        </div>
-      </div>
 
-      <div class="row align-items-end the-week" style="max-width: 1000px">
-        <div class="col-2 tue">
-          <p>
-            Tue <br />
-            -1°/7°<br />
-          </p>
-          <img src="images/snow.png" alt="snowing emoji" width="60px" />
-        </div>
-        <div class="col-2 wed">
-          <p>
-            Wed <br />
-            -1°/6°<br />
-          </p>
-          <img src="images/snow.png" alt="snowing emoji" width="60px" />
-        </div>
-        <div class="col-2 thu">
-          <p>
-            Thu <br />
-            -1°/6° <br />
-          </p>
-          <img src="images/cloudy.png" alt="cloudy emoji" width="60px" />
-        </div>
-        <div class="col-2 fri">
-          <p>
-            Fri <br />
-            -1°/6°<br />
-          </p>
-          <img src="images/rain.png" alt="raining emoji" width="60px" />
-        </div>
-        <div class="col-2 sat">
-          <p>
-            Sat <br />
-            -1°/7° <br />
-          </p>
-          <img src="images/cloudy.png" alt="cloudy emoji" width="60px" />
-        </div>
-        <div class="col-2 sun">
-          <p>
-            Sun <br />
-            1°/6° <br />
-          </p>
-          <img src="images/cloudy.png" alt="cloudy emoji" width="60px" />
-        </div>
+        <footer class="footer">
+          <a href="https://github.com/TDenisaM/my-weather-app" target="_blank"
+            >Open-source code
+          </a>
+          <span>by Denisa-Maria Tudor</span>
+        </footer>
       </div>
-
-      <footer class="footer">
-        <a href="https://github.com/TDenisaM/my-weather-app" target="_blank"
-          >Open-source code
-        </a>
-        <span>by Denisa-Maria Tudor</span>
-      </footer>
     </div>
     <script src="script/index.js"></script>
   </body>
