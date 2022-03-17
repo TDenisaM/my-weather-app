@@ -25,10 +25,13 @@ function displayWeatherConditions(response) {
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
 
-  document.querySelector("#wind-value").innerHTML = response.data.wind.speed;
+  document.querySelector(
+    "#wind-value"
+  ).innerHTML = `${response.data.wind.speed}km/h`;
 
-  document.querySelector("#humidity-value").innerHTML =
-    response.data.main.humidity;
+  document.querySelector(
+    "#humidity-value"
+  ).innerHTML = `${response.data.main.humidity}%`;
 
   document.querySelector("#sunrise-value").innerHTML =
     response.data.sys.sunrise;

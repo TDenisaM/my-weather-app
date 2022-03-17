@@ -9,26 +9,31 @@ body {
   background-blend-mode: lighten, exclusion;
   background-repeat: no-repeat;
   margin: 30px auto;
-  border-radius: 20px;
-  min-width: fit-content;
-  min-height: fit-content;
+  border: solid;
+  border-color: #1c7696;
+  border-radius: 50px;
+  width: 1000px;
 }
-
-h1 {
-  padding-top: 50px;
-  text-align: center;
+.heather {
+  display: inline;
+  box-sizing: border-box;
+  width: 100%;
+}
+.app {
+  position: absolute;
+  margin: 0;
+  padding: 30px;
   color: #1c7696;
   text-shadow: 5px 5px 2px rgb(129, 172, 179);
-  font-size: 50px;
+  font-size: 30px;
 }
-.logo {
+.app .logo {
   display: block;
-  margin: auto;
-  padding: 20px 0px;
+  margin: 5px 25px;
 }
 .search {
-  margin: auto;
   max-width: 800px;
+  margin: 55px 10px auto 300px;
 }
 .search-box {
   font-size: 20px;
@@ -55,6 +60,7 @@ h1 {
   padding: 10px;
   font-size: 20px;
   font-style: bolder;
+  color: black;
   border: solid;
   border-color: #1c7696;
   border-radius: 15px;
@@ -66,26 +72,30 @@ h1 {
   background-color: #2d5564;
 }
 .everything {
-  margin: auto;
+  margin: 20px auto 0px auto;
   border: none;
+}
+.today-left,
+.today-right,
+.left,
+.right {
+  margin: 0 auto;
+  padding-bottom: 0;
+  height: 400px;
+  min-height: fit-content;
 }
 .today {
-  margin: 0;
-  text-align: center;
   font-size: 30px;
-  background-color: rgba(150, 186, 172, 0.09);
-
+  background-color: hsla(154, 37%, 76%, 0);
   border: none;
+  padding-top: 40px;
+  margin: 0 auto;
 }
+
 .weather-today-text {
   text-align: left;
   font-size: 35px;
-  padding-left: 100px;
-}
-.today-left,
-.today-right {
-  margin: auto;
-  padding-left: 50px;
+  padding-left: 25px;
 }
 
 .left .city-weather {
@@ -107,7 +117,7 @@ h1 {
 .city-weather .current-temp {
   display: inline;
   margin-top: 20px;
-  font-size: 60px;
+  font-size: 80px;
 }
 .city-weather .units {
   font-size: 30px;
@@ -142,15 +152,15 @@ h1 {
 }
 .weather-today-image {
   display: block;
-  margin: 30px auto;
+  margin: 120px auto;
   text-align: center;
 }
 
 .weather-today-image p {
   display: block;
-  margin: 0;
+  margin: 0 auto;
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
 }
 .wind-emoji,
 .humidity-emoji,
@@ -160,10 +170,10 @@ h1 {
   background-color: rgba(150, 186, 172, 0.09);
 }
 .humidity-emoji {
-  margin: 25px 30px auto auto;
+  margin: 50px 30px auto auto;
 }
 .sunrise-emoji {
-  margin: 30px 30px auto auto;
+  margin: 60px 30px auto auto;
 }
 
 .wind,
@@ -221,6 +231,15 @@ h1 {
   font-weight: 900;
   font-size: 30px;
 }
-.made-margin {
-  margin-bottom: 30px;
+footer {
+  padding: 20px;
+
+  font-size: 20px;
+  font-weight: 900;
+}
+footer a {
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
+  font-size: 20px;
+  font-weight: 900;
 }

@@ -23,16 +23,18 @@
   <body>
     <div class="container">
       <div class="heather">
-        <h1>Your weather</h1>
-        <img
-          class="logo"
-          src="images/weather app.svg"
-          alt=""
-          width="400px 300px"
-        />
-      </div>
-      <div class="input-group mb-3 search" id="search-engine">
-        <form id="search-form">
+        <h1 class="app">
+          Your weather
+          <div>
+            <img
+              class="logo"
+              src="images/weather app.svg"
+              alt=""
+              width="150px 100px"
+            />
+          </div>
+        </h1>
+        <form class="search" id="search-form">
           <input
             class="search-box"
             id="input-city"
@@ -40,21 +42,21 @@
             placeholder="Type city"
           />
           <input class="search-button" type="submit" value="Search" />
-
-          <input
-            class="current-location-button"
+          <button
+            type="button"
+            class="btn btn-primary current-location-button"
             id="current-location-button"
-            type="submit"
-            value="Current Location"
-          />
+          >
+            Current Location
+          </button>
         </form>
       </div>
 
       <div class="row everything">
-        <div class="col-6 today-left">
-          <div class="card mb-3 today" style="max-width: 580px">
+        <div class="col-7 today-left">
+          <div class="card mb-3 today" style="max-width: 550px">
             <div class="row g-0 left">
-              <div class="col-md-8 weather-today-text">
+              <div class="col-md-9 weather-today-text">
                 <div class="day" id="current-day">Monday</div>
                 <div class="time" id="current-time">12:00PM</div>
                 <div class="city-weather">
@@ -67,7 +69,7 @@
                   </p>
                 </div>
               </div>
-              <div class="col-md-4 weather-today-image">
+              <div class="col-md-3 weather-today-image">
                 <img
                   src="images/rain.png"
                   class="img-fluid rounded-start todays-emoji"
@@ -80,9 +82,8 @@
             </div>
           </div>
         </div>
-
-        <div class="col-6 today-right">
-          <div class="card mb-3 today" style="max-width: 580px">
+        <div class="col-5 today-right">
+          <div class="card mb-3 today" style="max-width: 550px">
             <div class="row g-0 right">
               <div class="col-md-4">
                 <div class="col-md-4 wind-emoji">
@@ -125,6 +126,7 @@
           </div>
         </div>
       </div>
+      <hr />
       <div class="row align-items-center the-day" style="max-width: 1000px">
         <div class="col-2 now">
           <p>
@@ -215,9 +217,13 @@
           <img src="images/cloudy.png" alt="cloudy emoji" width="60px" />
         </div>
       </div>
-      <p class="made-margin">
-        <br />
-      </p>
+
+      <footer class="footer">
+        <a href="https://github.com/TDenisaM/my-weather-app" target="_blank"
+          >Open-source code
+        </a>
+        <span>by Denisa-Maria Tudor</span>
+      </footer>
     </div>
     <script src="script/index.js"></script>
   </body>
