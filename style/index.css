@@ -136,36 +136,10 @@
   position: relative;
   display: inline;
   top: -30px;
-  text-decoration: none;
   padding-left: 0;
-}
-.units a {
-  text-decoration: none;
-  color: black;
-  transition: all 150ms ease-in-out;
-}
-.units a:hover {
-  font-size: 30px;
-  padding: 5px;
-  color: rgb(19, 107, 120);
-  background-color: #f2ce04;
   border: solid;
   border-color: rgb(19, 107, 120);
   border-radius: 8px;
-}
-.weather-today-text .active {
-  font-size: 30px;
-  padding: 5px;
-  color: rgb(19, 107, 120);
-  background-color: #9db9c4;
-  border: solid;
-  border-color: rgb(19, 107, 120);
-  border-radius: 8px;
-  cursor: default;
-}
-.active:hover {
-  text-decoration: none;
-  background-color: #9db9c4;
 }
 .weather-today-icon {
   margin-top: 60px;

@@ -55,10 +55,8 @@ function displayForecast(response) {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 }
 function getForecast(coordinates) {
-  console.log(coordinates);
   let units = "metric";
   let apiKey = "c263b408beea5a53bf5cae8b844890fd";
   let apiEndPoint = "https://api.openweathermap.org/data/2.5/onecall?";
@@ -79,7 +77,7 @@ function displayWeatherConditions(response) {
 
   document.querySelector(
     "#wind-value"
-  ).innerHTML = `${response.data.wind.speed}km/h`;
+  ).innerHTML = `${response.data.wind.speed}m/s`;
 
   document.querySelector(
     "#humidity-value"
@@ -116,8 +114,6 @@ function handleSubmit(event) {
 }
 
 function currentPosition(position) {
-  //console.log(position.coords.latitude);
-  //console.log(position.coords.longitude);
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let units = "metric";
@@ -131,34 +127,10 @@ function getCurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(currentPosition);
 }
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault;
-  let temperatureElement = document.querySelector("#current-temperature");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault;
-  let temperatureElement = document.querySelector("#current-temperature");
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-let celsiusTemperature = null;
-
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 let currentPositionButton = document.querySelector("#current-location-button");
 currentPositionButton.addEventListener("click", getCurrentPosition);
-
-let fahrenheitLink = document.querySelector("#link-fahrenheit");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#link-celsius");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Oslo");
