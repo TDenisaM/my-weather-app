@@ -15,6 +15,29 @@ function formatDate(timestamp) {
   return `${day}, ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2 tue">
+            <div>${day}</div>
+            <img src="images/snow.png" alt="snowing emoji" width="60px" />
+            <div class="temperature">
+              <span class="temperature-max">-1°</span>
+              <span class="temperature-min">7°</span>
+            </div>
+          </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 function displayWeatherConditions(response) {
   document.querySelector("#current-date").innerHTML = formatDate(
     response.data.dt * 1000
@@ -109,3 +132,4 @@ let celsiusLink = document.querySelector("#link-celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Oslo");
+displayForecast();
