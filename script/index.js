@@ -100,6 +100,60 @@ function getForecast(coordinates) {
   let apiUrl = `${apiEndPoint}lat=${coordinates.lat}&lon=-${coordinates.lon}&units=${units}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayForecast);
 }
+function backgroundChangeDay(description) {
+  if (description == "Clouds") {
+    document.getElementById("wrapper").style.backgroundImage = `url(
+      "style/imagescss/background_cloudy_day.jpg"
+    )`;
+  } else if (description == "Snow") {
+    document.getElementById("wrapper").style.backgroundImage = `url(
+      "style/imagescss/background_snow_day.jpg"
+    )`;
+  } else if (description == "Rain") {
+    document.getElementById("wrapper").style.backgroundImage = `url(
+      "style/imagescss/background_rain_day.jpg"
+    )`;
+  } else if (description == "Thunderstorm") {
+    document.getElementById("wrapper").style.backgroundImage = `url(
+      "style/imagescss/background_thunder_day.jpg"
+    )`;
+  } else if (description == "Clear") {
+    document.getElementById("wrapper").style.backgroundImage = `url(
+      "style/imagescss/background_clear_day.jpg"
+    )`;
+  } else {
+    document.getElementById("wrapper").style.backgroundImage = `url(
+      "style/imagescss/background_default_day.jpg"
+    )`;
+  }
+}
+function backgroundChangeEvening(description) {
+  if (description == "Clouds") {
+    document.getElementById("wrapper").style.backgroundImage = `url(
+      "style/imagescss/background_cloudy_night.jpg"
+    )`;
+  } else if (description == "Snow") {
+    document.getElementById("wrapper").style.backgroundImage = `url(
+      "style/imagescss/background_snow_night.jpg"
+    )`;
+  } else if (description == "Rain") {
+    document.getElementById("wrapper").style.backgroundImage = `url(
+      "style/imagescss/background_rain_night.jpg"
+    )`;
+  } else if (description == "Thunderstorm") {
+    document.getElementById("wrapper").style.backgroundImage = `url(
+      "style/imagescss/background_thunder_night.jpg"
+    )`;
+  } else if (description == "Clear") {
+    document.getElementById("wrapper").style.backgroundImage = `url(
+      "style/imagescss/background_clear_night.jpg"
+    )`;
+  } else {
+    document.getElementById("wrapper").style.backgroundImage = `url(
+      "style/imagescss/background_default_night.jpg"
+    )`;
+  }
+}
 function displayWeatherConditions(response) {
   document.querySelector("#current-date").innerHTML = formatDate(
     response.data.dt
@@ -132,9 +186,20 @@ function displayWeatherConditions(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   todaysIcon.setAttribute("alt", response.data.weather[0].description);
-  celsiusTemperature = response.data.main.temp;
+
   getHourlyWeather(response.data.coord);
   getForecast(response.data.coord);
+
+  function formatTime(timestamp) {
+    let hoursDay = new Date(timestamp * 1000);
+    let hours = String(hoursDay.getHours()).padStart(2, "0");
+    return `${hours}`;
+  }
+  if (formatTime(response.data.dt) <= 18) {
+    backgroundChangeDay(response.data.weather[0].main);
+  } else {
+    backgroundChangeEvening(response.data.weather[0].main);
+  }
 }
 function searchCity(city) {
   let units = "metric";

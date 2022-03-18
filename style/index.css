@@ -1,5 +1,4 @@
 .wrapper {
-  background-image: url("imagescss/background-cloudy_and_rain.jpg");
   background-size: cover;
   max-width: 1200px;
   background-blend-mode: lighten, exclusion;
@@ -10,7 +9,7 @@
 }
 .container {
   font-family: PT mono, monospace;
-  background-color: hsla(154, 37%, 76%, 0.3);
+  background-color: hsla(155, 37%, 76%, 0.497);
   margin: 30px auto;
   border: solid;
   border-color: #1c7696;
@@ -24,9 +23,10 @@
   position: absolute;
   margin: 0;
   padding: 40px;
-  color: #1c7696;
+  color: #12556d;
   text-shadow: 5px 5px 2px rgb(129, 172, 179);
   font-size: 30px;
+  font-weight: 900;
 }
 .app .logo {
   display: block;
@@ -113,7 +113,7 @@
 .left .city-weather {
   display: block;
   margin: 0 auto;
-  font-size: 60px;
+  font-size: 50px;
   text-align: left;
   font-weight: 900;
 }
@@ -214,8 +214,10 @@ footer {
   font-size: 20px;
   font-weight: 900;
   max-width: 500px;
-  background-color: rgba(221, 181, 212, 0.47);
+  background-color: rgba(221, 181, 212, 0.6);
   border-radius: 50px;
+  border: solid;
+  border-color: #af42b3b1;
 }
 footer a {
   text-decoration: none;
