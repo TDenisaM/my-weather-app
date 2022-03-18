@@ -212,7 +212,11 @@ function searchCity(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#input-city").value;
-  searchCity(city);
+  if (city === undefined || city === "") {
+    alert("Sorry! We can't find this city in our database 😕.");
+  } else {
+    searchCity(city);
+  }
 }
 
 function currentPosition(position) {
