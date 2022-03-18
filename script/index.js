@@ -206,17 +206,18 @@ function searchCity(city) {
   let apiKey = "c263b408beea5a53bf5cae8b844890fd";
   let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather?q=";
   let apiUrl = `${apiEndPoint}${city}&units=${units}&appid=${apiKey}`;
-  axios.get(apiUrl).then(displayWeatherConditions);
+  axios
+    .get(apiUrl)
+    .then(displayWeatherConditions)
+    .catch(function (error) {
+      alert("Oops! Make sure to type a valid city name!");
+    });
 }
 
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#input-city").value;
-  if (city === undefined || city === "") {
-    alert("Sorry! We can't find this city in our database 😕.");
-  } else {
-    searchCity(city);
-  }
+  searchCity(city);
 }
 
 function currentPosition(position) {
