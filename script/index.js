@@ -27,6 +27,43 @@ function formatForecastDays(timestamp) {
   let day = days[forecastDays.getDay()];
   return `${day}`;
 }
+function formatHourlyTime(timestamp) {
+  let hoursDay = new Date(timestamp * 1000);
+  let hours = String(hoursDay.getHours()).padStart(2, "0");
+  let minutes = String(hoursDay.getMinutes()).padStart(2, "0");
+  return `${hours}:${minutes}`;
+}
+
+function displayHourly(response) {
+  let hourly = response.data.hourly;
+
+  let hourlyElement = document.querySelector("#hourly");
+
+  let hourlyHTML = `<div class="row">`;
+  hourly.forEach(function (todaysHours, index) {
+    if (index < 7 && index > 0) {
+      hourlyHTML =
+        hourlyHTML +
+        `<div class="col-2 now">
+            <div>${formatHourlyTime(todaysHours.dt)}</div>
+            <img src="http://openweathermap.org/img/wn/${
+              todaysHours.weather[0].icon
+            }@2x.png" />
+            <div>${Math.round(todaysHours.temp)}°</div>
+          </div>`;
+    }
+  });
+  hourlyHTML = hourlyHTML + `</div>`;
+  hourlyElement.innerHTML = hourlyHTML;
+}
+
+function getHourlyWeather(coordinates) {
+  let units = "metric";
+  let apiKey = "c263b408beea5a53bf5cae8b844890fd";
+  let apiEndPoint = "https://api.openweathermap.org/data/2.5/onecall?";
+  let apiUrl = `${apiEndPoint}lat=${coordinates.lat}&lon=-${coordinates.lon}&units=${units}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayHourly);
+}
 
 function displayForecast(response) {
   let forecast = response.data.daily;
@@ -34,7 +71,7 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 7 && index > 0) {
       forecastHTML =
         forecastHTML +
         `<div class="col-2 tue">
@@ -96,7 +133,7 @@ function displayWeatherConditions(response) {
   );
   todaysIcon.setAttribute("alt", response.data.weather[0].description);
   celsiusTemperature = response.data.main.temp;
-
+  getHourlyWeather(response.data.coord);
   getForecast(response.data.coord);
 }
 function searchCity(city) {
