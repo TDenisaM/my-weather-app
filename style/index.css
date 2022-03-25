@@ -246,32 +246,21 @@ footer a {
 }
 
 @media (max-width: 768px) {
-  .wind-emoji,
-  .humidity-emoji,
-  .sunrise-emoji {
-    margin: 15px 30px auto auto;
-  }
-  .wind p,
-  .humidity p,
-  .sunrise p {
-    font-size: 25px;
-    text-align: left;
-    margin: 0;
-  }
   .wrapper {
-    max-width: 768px;
+    max-width: fit-content;
   }
 
   .weather-content {
     margin-left: 0;
     margin-right: 0;
     max-width: fit-content;
+    height: fit-content;
   }
-  .now div,
-  .tue div {
+  .today-left {
+    max-height: 300px;
+  }
+  .weather-today-icon p {
     font-size: 20px;
-    padding: 0;
-    margin: 0;
   }
   .wind-emoji,
   .humidity-emoji,
@@ -287,22 +276,30 @@ footer a {
     display: inline-flex;
   }
 
-  .today-left {
-    max-height: 300px;
+  .now div,
+  .tue div {
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
   }
+
   .search-box {
     max-width: 250px;
   }
 }
 @media (max-width: 576px) {
+  .wrapper {
+    width: fit-content;
+  }
   .heather {
     display: inline;
   }
   .search-box {
-    max-width: 210px;
+    max-width: 140px;
   }
   .left {
-    min-width: 400px;
+    min-width: fit-content;
+    min-height: 300px;
   }
   .weather-today-text {
     max-height: 300px;
