@@ -53,12 +53,10 @@
           </form>
         </div>
         <div class="container weather-content">
-          <div class="row d-flex justify-content-evenly everything">
+          <div class="row everything">
             <div class="col-md-7 today-left">
               <div class="card mb-3 today">
-                <div
-                  class="row d-flex justify-content-evenly everything g-0 left"
-                >
+                <div class="row left">
                   <div class="col-sm-8 weather-today-text">
                     <small>Last updated:</small>
                     <div class="date" id="current-date">Monday 12:00</div>
@@ -82,27 +80,25 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-5 today-right">
+            <div class="col-md-5 today-right">
               <div class="card mb-3 today">
-                <div
-                  class="row d-flex justify-content-evenly everything g-0 right"
-                >
-                  <div class="col-sm-3 icons">
-                    <div class="col-sm-4 wind-emoji">
+                <div class="row d-flex justify-content-evenly right">
+                  <div class="col-md-3 icons">
+                    <div class="col-md-4 wind-emoji">
                       <img
                         src="images/wind-icon.png"
                         class="img-fluid rounded-start wind-img"
                         alt="wind-emoji"
                       />
                     </div>
-                    <div class="col-sm-3 humidity-emoji">
+                    <div class="col-md-3 humidity-emoji">
                       <img
                         src="images/humidity-icon.png"
                         class="img-fluid rounded-start humidity-img"
                         alt="wind-emoji"
                       />
                     </div>
-                    <div class="col-sm-3 sunrise-emoji">
+                    <div class="col-md-3 sunrise-emoji">
                       <img
                         src="images/sunrise-icon.png"
                         class="img-fluid rounded-start sunrise-img"
@@ -110,16 +106,16 @@
                       />
                     </div>
                   </div>
-                  <div class="col-sm-9 conditions">
-                    <div class="col-sm-9 wind">
+                  <div class="col-md-9 conditions">
+                    <div class="col-md-9 wind">
                       <p>Wind</p>
                       <div class="wind-value" id="wind-value">km/h</div>
                     </div>
-                    <div class="col-sm-9 humidity">
+                    <div class="col-md-9 humidity">
                       <p>Humidity</p>
                       <div class="humidity-value" id="humidity-value">%</div>
                     </div>
-                    <div class="col-sm-9 sunrise">
+                    <div class="col-md-9 sunrise">
                       <p>Sunrise</p>
                       <div class="sunrise-value" id="sunrise-value"></div>
                     </div>
@@ -132,11 +128,11 @@
         <hr />
         <div class="container weather-content">
           <div
-            class="row align-items-center d-flex justify-content-evenly everything the-day"
+            class="row align-items-center d-flex justify-content-evenly the-day"
             id="hourly"
           ></div>
           <div
-            class="row align-items-center d-flex justify-content-evenly everything forecast-weather"
+            class="row align-items-center d-flex justify-content-evenly forecast-weather"
             id="forecast"
           ></div>
         </div>
