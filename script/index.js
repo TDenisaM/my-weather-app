@@ -44,7 +44,7 @@ function displayHourly(response) {
     if (index < 7 && index > 0) {
       hourlyHTML =
         hourlyHTML +
-        `<div class="col-2 now">
+        `<div class="col-sm-2 now">
             <div>${formatHourlyTime(todaysHours.dt)}</div>
             <img src="http://openweathermap.org/img/wn/${
               todaysHours.weather[0].icon
@@ -74,7 +74,7 @@ function displayForecast(response) {
     if (index < 7 && index > 0) {
       forecastHTML =
         forecastHTML +
-        `<div class="col-2 tue">
+        `<div class="col-sm-2 tue">
             <div>${formatForecastDays(forecastDay.dt)}</div>
             <img src="http://openweathermap.org/img/wn/${
               forecastDay.weather[0].icon

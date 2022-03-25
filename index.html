@@ -23,7 +23,7 @@
   </head>
   <body>
     <div class="wrapper" id="wrapper">
-      <div class="container">
+      <div class="wrapper-container">
         <div class="heather">
           <h1 class="app">
             Your weather
@@ -52,71 +52,77 @@
             </button>
           </form>
         </div>
-        <div class="row everything">
-          <div class="col-7 today-left">
-            <div class="card mb-3 today" style="max-width: 550px">
-              <div class="row g-0 left">
-                <div class="col-md-8 weather-today-text">
-                  <small>Last updated:</small>
-                  <div class="date" id="current-date">Monday 12:00</div>
-                  <div class="city-weather">
-                    <p class="city" id="current-city"></p>
-                    <p class="country" id="current-country"></p>
-                    <p class="current-temp" id="current-temperature"></p>
-                    <p class="units">°C</p>
+        <div class="container weather-content">
+          <div class="row d-flex justify-content-evenly everything">
+            <div class="col-md-7 today-left">
+              <div class="card mb-3 today">
+                <div
+                  class="row d-flex justify-content-evenly everything g-0 left"
+                >
+                  <div class="col-sm-8 weather-today-text">
+                    <small>Last updated:</small>
+                    <div class="date" id="current-date">Monday 12:00</div>
+                    <div class="city-weather">
+                      <p class="city" id="current-city"></p>
+                      <p class="country" id="current-country"></p>
+                      <p class="current-temp" id="current-temperature"></p>
+                      <p class="units">°C</p>
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-4 weather-today-icon">
-                  <img
-                    src=""
-                    class="img-fluid rounded-start todays-icon"
-                    alt="clouds-and-rain"
-                    width="170px"
-                    id="todays-icon"
-                  />
-                  <p id="description"></p>
+                  <div class="col-sm-4 weather-today-icon">
+                    <img
+                      src=""
+                      class="img-fluid rounded-start todays-icon"
+                      alt="clouds-and-rain"
+                      width="170px"
+                      id="todays-icon"
+                    />
+                    <p id="description"></p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-5 today-right">
-            <div class="card mb-3 today" style="max-width: 550px">
-              <div class="row g-0 right">
-                <div class="col-md-4">
-                  <div class="col-md-4 wind-emoji">
-                    <img
-                      src="images/wind-icon.png"
-                      class="img-fluid rounded-start wind-img"
-                      alt="wind-emoji"
-                    />
+            <div class="col-sm-5 today-right">
+              <div class="card mb-3 today">
+                <div
+                  class="row d-flex justify-content-evenly everything g-0 right"
+                >
+                  <div class="col-sm-3 icons">
+                    <div class="col-sm-4 wind-emoji">
+                      <img
+                        src="images/wind-icon.png"
+                        class="img-fluid rounded-start wind-img"
+                        alt="wind-emoji"
+                      />
+                    </div>
+                    <div class="col-sm-3 humidity-emoji">
+                      <img
+                        src="images/humidity-icon.png"
+                        class="img-fluid rounded-start humidity-img"
+                        alt="wind-emoji"
+                      />
+                    </div>
+                    <div class="col-sm-3 sunrise-emoji">
+                      <img
+                        src="images/sunrise-icon.png"
+                        class="img-fluid rounded-start sunrise-img"
+                        alt="wind-emoji"
+                      />
+                    </div>
                   </div>
-                  <div class="col-md-4 humidity-emoji">
-                    <img
-                      src="images/humidity-icon.png"
-                      class="img-fluid rounded-start humidity-img"
-                      alt="wind-emoji"
-                    />
-                  </div>
-                  <div class="col-md-4 sunrise-emoji">
-                    <img
-                      src="images/sunrise-icon.png"
-                      class="img-fluid rounded-start sunrise-img"
-                      alt="wind-emoji"
-                    />
-                  </div>
-                </div>
-                <div class="col-md-8">
-                  <div class="col-md-8 wind">
-                    Wind
-                    <div class="wind-value" id="wind-value">km/h</div>
-                  </div>
-                  <div class="col-md-8 humidity">
-                    Humidity
-                    <div class="humidity-value" id="humidity-value">%</div>
-                  </div>
-                  <div class="col-md-8 sunrise">
-                    Sunrise
-                    <div class="sunrise-value" id="sunrise-value"></div>
+                  <div class="col-sm-9 conditions">
+                    <div class="col-sm-9 wind">
+                      <p>Wind</p>
+                      <div class="wind-value" id="wind-value">km/h</div>
+                    </div>
+                    <div class="col-sm-9 humidity">
+                      <p>Humidity</p>
+                      <div class="humidity-value" id="humidity-value">%</div>
+                    </div>
+                    <div class="col-sm-9 sunrise">
+                      <p>Sunrise</p>
+                      <div class="sunrise-value" id="sunrise-value"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -124,16 +130,16 @@
           </div>
         </div>
         <hr />
-        <div
-          class="row align-items-center the-day"
-          id="hourly"
-          style="max-width: 900px"
-        ></div>
-        <div
-          class="row align-items-end forecast-weather"
-          id="forecast"
-          style="max-width: 900px"
-        ></div>
+        <div class="container weather-content">
+          <div
+            class="row align-items-center d-flex justify-content-evenly everything the-day"
+            id="hourly"
+          ></div>
+          <div
+            class="row align-items-center d-flex justify-content-evenly everything forecast-weather"
+            id="forecast"
+          ></div>
+        </div>
 
         <footer class="footer">
           <a href="https://github.com/TDenisaM/my-weather-app" target="_blank"

@@ -7,14 +7,13 @@
   margin: 0 auto;
   border-radius: 50px;
 }
-.container {
+.wrapper-container {
   font-family: PT mono, monospace;
   background-color: hsla(155, 37%, 76%, 0.497);
   margin: 30px auto;
   border: solid;
   border-color: #1c7696;
   border-radius: 50px;
-  width: 1000px;
 }
 .heather {
   display: inline;
@@ -71,6 +70,9 @@
 .current-location-button:hover {
   color: #f2ce04;
   background-color: #2d5564;
+}
+.weather-content {
+  margin: 0 auto;
 }
 .everything {
   margin: 20px auto 0px auto;
@@ -157,17 +159,19 @@
   background-color: rgba(150, 186, 172, 0.09);
 }
 
-.wind,
-.humidity,
-.sunrise {
+.wind p,
+.humidity p,
+.sunrise p {
   font-size: 25px;
   text-align: left;
+  margin: 0;
 }
 .wind div,
 .humidity div,
 .sunrise div {
   font-size: 20px;
   margin-left: 10px;
+  padding: 0;
 }
 
 .the-day {
@@ -187,7 +191,7 @@
 .five-hour div {
   margin: 0 auto;
   font-weight: 900;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .forecast-weather {
@@ -203,7 +207,7 @@
 .tue {
   margin: 0 auto;
   font-weight: 900;
-  font-size: 30px;
+  font-size: 25px;
 }
 .tue .temperature-min {
   opacity: 0.5;
@@ -222,4 +226,62 @@ footer {
 footer a {
   text-decoration: none;
   transition: all 150ms ease-in-out;
+}
+@media (max-width: 992px) {
+  .today-right .right div {
+    font-size: 20px;
+  }
+  .wind-emoji,
+  .humidity-emoji,
+  .sunrise-emoji {
+    margin: 30px 30px auto auto;
+  }
+}
+@media (max-width: 768px) {
+  .wind-emoji,
+  .humidity-emoji,
+  .sunrise-emoji {
+    margin: 15px 30px auto auto;
+  }
+  .wind p,
+  .humidity p,
+  .sunrise p {
+    font-size: 25px;
+    text-align: left;
+    margin: 0;
+  }
+  .wrapper {
+    max-width: 768px;
+  }
+
+  .weather-content {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: fit-content;
+  }
+  .now div,
+  .tue div {
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  .wind-emoji,
+  .humidity-emoji,
+  .sunrise-emoji {
+    display: none;
+  }
+  .wind p,
+  .humidity p,
+  .sunrise p,
+  .wind div,
+  .humidity div,
+  .sunrise div {
+    display: inline-flex;
+  }
+  .today-right {
+    display: inline-flex;
+  }
+  .search-box {
+    max-width: 250px;
+  }
 }
