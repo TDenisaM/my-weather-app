@@ -148,7 +148,7 @@
 }
 .weather-today-icon p {
   text-align: center;
-  font-size: 25px;
+  font-size: 23px;
   text-transform: capitalize;
 }
 .wind-emoji,
@@ -248,6 +248,7 @@ footer a {
 @media (max-width: 768px) {
   .wrapper {
     max-width: fit-content;
+    min-width: fit-content;
   }
 
   .weather-content {
@@ -289,7 +290,8 @@ footer a {
 }
 @media (max-width: 576px) {
   .wrapper {
-    width: fit-content;
+    max-width: fit-content;
+    min-width: fit-content;
   }
   .heather {
     display: inline;
